@@ -19,9 +19,22 @@ declare const isNull: (n: any) => n is null;
 declare const isUndefined: (u: any) => u is undefined;
 
 declare function polyfillNumber(num: number | string): number;
-declare function fen2yuan(num: number | string): string;
+/**
+ * 分转元
+ * @param num 分
+ * @param keepLength 保留小数位数
+ * @returns 元
+ */
+declare function fen2yuan(num: number | string, keepLength?: number): string;
 declare function yuan2fen(num: number | string): number;
-declare function fen2yuanWithCurrency(num: string | number, withFlag?: boolean): string;
+/**
+ * 分转元并加入财务分隔符
+ * @param num 分
+ * @param withFlag 是否加入符号
+ * @param keepLength 保留小数位数
+ * @returns 元
+ */
+declare function fen2yuanWithCurrency(num: string | number, keepLength?: number, withFlag?: boolean): string;
 /**
  * 加入财务分隔符
  */

@@ -9,16 +9,29 @@ export function polyfillNumber(num: number | string) {
   return +num || 0;
 }
 
-export function fen2yuan(num: number | string) {
-  return (polyfillNumber(num) / 100).toFixed(2);
+/**
+ * 分转元
+ * @param num 分
+ * @param keepLength 保留小数位数
+ * @returns 元
+ */
+export function fen2yuan(num: number | string, keepLength = 2) {
+  return (polyfillNumber(num) / 100).toFixed(keepLength);
 }
 
 export function yuan2fen(num: number | string) {
   return polyfillNumber(num) * 100;
 }
 
-export function fen2yuanWithCurrency(num: string | number, withFlag = false) {
-  return formatCurrency(fen2yuan(num), withFlag);
+/**
+ * 分转元并加入财务分隔符
+ * @param num 分
+ * @param withFlag 是否加入符号
+ * @param keepLength 保留小数位数
+ * @returns 元
+ */
+export function fen2yuanWithCurrency(num: string | number, keepLength = 2, withFlag = false) {
+  return formatCurrency(fen2yuan(num, keepLength), withFlag);
 }
 
 /**

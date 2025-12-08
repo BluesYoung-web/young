@@ -175,14 +175,14 @@ var deepClone = (obj) => {
 function polyfillNumber(num) {
   return +num || 0;
 }
-function fen2yuan(num) {
-  return (polyfillNumber(num) / 100).toFixed(2);
+function fen2yuan(num, keepLength = 2) {
+  return (polyfillNumber(num) / 100).toFixed(keepLength);
 }
 function yuan2fen(num) {
   return polyfillNumber(num) * 100;
 }
-function fen2yuanWithCurrency(num, withFlag = false) {
-  return formatCurrency(fen2yuan(num), withFlag);
+function fen2yuanWithCurrency(num, keepLength = 2, withFlag = false) {
+  return formatCurrency(fen2yuan(num, keepLength), withFlag);
 }
 var formatCurrency = (num, withFlag = false) => {
   if (num) {

@@ -24,14 +24,14 @@ const x = (t, e) => Object.prototype.toString.call(t) === `[object ${e.name}]`, 
 function E(t) {
   return +t || 0;
 }
-function I(t) {
-  return (E(t) / 100).toFixed(2);
+function I(t, e = 2) {
+  return (E(t) / 100).toFixed(e);
 }
 function ct(t) {
   return E(t) * 100;
 }
-function at(t, e = !1) {
-  return L(I(t), e);
+function at(t, e = 2, n = !1) {
+  return L(I(t, e), n);
 }
 const L = (t, e = !1) => {
   if (t) {
