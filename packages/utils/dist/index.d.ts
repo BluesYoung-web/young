@@ -30,8 +30,8 @@ declare function yuan2fen(num: number | string): number;
 /**
  * 分转元并加入财务分隔符
  * @param num 分
- * @param withFlag 是否加入符号
  * @param keepLength 保留小数位数
+ * @param withFlag 是否加入符号
  * @returns 元
  */
 declare function fen2yuanWithCurrency(num: string | number, keepLength?: number, withFlag?: boolean): string;
